@@ -24,7 +24,7 @@ export class User {
   
   
   @Column( {
-    unique: true,
+    type: 'text',
     array: true,
     default: ['user']
   })
