@@ -1298,6 +1298,13 @@
   dependencies:
     "@babel/types" "^7.20.7"
 
+"@types/bcrypt@^5.0.2":
+  version "5.0.2"
+  resolved "https://registry.yarnpkg.com/@types/bcrypt/-/bcrypt-5.0.2.tgz#22fddc11945ea4fbc3655b3e8b8847cc9f811477"
+  integrity sha512-6atioO8Y75fNcbmj0G7UjI9lXN2pQ/IGJ2FWT4a/btd0Lk9lQalHLKhkgKVZ3r+spnmWUKfbMi1GEe9wyHQfNQ==
+  dependencies:
+    "@types/node" "*"
+
 "@types/body-parser@*":
   version "1.19.5"
   resolved "https://registry.npmjs.org/@types/body-parser/-/body-parser-1.19.5.tgz"
@@ -1898,9 +1905,10 @@ any-promise@^1.0.0:
     "@nestjs/graphql" "^12.2.1"
     "@nestjs/platform-express" "^10.0.0"
     "@nestjs/typeorm" "^10.0.2"
-    anylist "file:C:/Users/Mariano/AppData/Local/Yarn/Cache/v6/npm-anylist-0.0.1-2f77c4a5-3037-4b4a-9307-692fb1619007-1732127417480/node_modules/anylist"
+    anylist "file:C:/Users/Mariano/AppData/Local/Yarn/Cache/v6/npm-anylist-0.0.1-ab92f420-c6ea-4b1d-aad0-d6e931995b23-1732127701868/node_modules/anylist"
     apollo-server-core "^3.13.0"
     apollo-server-express "^3.13.0"
+    bcrypt "^5.1.1"
     class-transformer "^0.5.1"
     class-validator "^0.14.1"
     graphql "^16.9.0"
