@@ -61,4 +61,11 @@ export class AuthService {
         delete user.password;
         return user;
     }
+
+    revalidateToken( user: User): AuthResponse {
+        const token = this.getJwtToken( user.id)
+        return {
+            token, user
+        }
+    }
 }

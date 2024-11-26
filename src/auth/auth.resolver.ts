@@ -38,8 +38,8 @@ export class AuthResolver {
   @Query( () => AuthResponse , { name: 'revalidate'})
   @UseGuards( JwtAuthGuard )
   revalidateToken( @CurrentUser() user: User): AuthResponse {
-    
-    throw new Error('not implemented yet')
-    //return  this.authService.revalidateToken( )
+
+    return this.authService.revalidateToken( user )
+
   }
 }
