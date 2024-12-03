@@ -11,7 +11,6 @@ export class UsersResolver {
   findAll(
     @Args() validRoles: ValidRolesArgs
   ): Promise<User[]> {
-
     return this.usersService.findAll();
   }
 
