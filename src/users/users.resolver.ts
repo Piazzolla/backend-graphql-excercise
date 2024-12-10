@@ -3,7 +3,7 @@ import { UsersService } from './users.service';
 import { User } from './entities/user.entity';
 import { ValidRolesArgs } from './dto/args/roles.arg';
 import { JwtAuthGuard } from 'src/auth/guards/jwt-auth.guard';
-import { UseGuards } from '@nestjs/common';
+import { ParseUUIDPipe, UseGuards } from '@nestjs/common';
 import { CurrentUser } from 'src/auth/decorators/current-user.decorator';
 import { ValidRoles } from 'src/auth/enums/valid-roles.enum';
 
@@ -19,12 +19,14 @@ export class UsersResolver {
   ): Promise<User[]> {
     return this.usersService.findAll( validRoles.roles);
   }
-
+  
   @Query(() => User, { name: 'user' })
-  findOne(@Args('id', { type: () => ID }) id: string): Promise<User> {
-    // TODO: 
-    throw new Error('not implemented yet')
-   // return this.usersService.findOne(id);
+  findOne(
+    @Args('id', { type: () => ID }, ParseUUIDPipe) id: string,
+    @CurrentUser([ValidRoles.admin, ValidRoles.superUser]) user: User
+  
+  ): Promise<User> {
+    return this.usersService.findOneById(id);
 
   }
 
